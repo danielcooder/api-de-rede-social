@@ -12,6 +12,7 @@ rotas.post('/usuarios', usuarios.cadastrarUsuario);
 rotas.post('/login', login.login)
 
 //postagens
-rotas.post('/postagens', postagens.cadastrarPostagem)
+rotas.post('/postagens', postagens.cadastrarPostagem);
+rotas.patch('/postagens/:id', postagens.atualizarPostagem)
 
 module.exports = rotas;
