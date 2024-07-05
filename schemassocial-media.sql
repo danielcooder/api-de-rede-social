@@ -1,3 +1,7 @@
+drop table postagens;
+
+drop table usuario;
+
 create table if not exists usuarios (
     id serial primary key,
     nome text not null,
@@ -7,7 +11,8 @@ create table if not exists usuarios (
 
 create table if not exists postagens (
     id serial primary key,
-    usuarios_id integer not null,
+    usuario_id integer not null,
     texto text not null,
-    foreign key (usuarios_id) references usuarios (id)
+    foreign key (usuario_id) references usuarios (id)
 );
+

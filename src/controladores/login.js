@@ -26,7 +26,7 @@ const login = async (req, res) => {
       return res.status(400).json('Email ou senha não confere.')
    }
 
-   const token = jwt.sign({ id: usuario.id}, 'senhaParaToken', {expiresIn: '8h'});
+   const token = jwt.sign({ id: usuario.id}, 'senhaParaToken', {expiresIn: '24h'});
 
    const {senha: senhaUsuario, ...dadosUsuario } = usuario
 
