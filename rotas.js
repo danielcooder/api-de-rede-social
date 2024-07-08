@@ -12,9 +12,15 @@ rotas.post('/usuarios', usuarios.cadastrarUsuario);
 //login 
 rotas.post('/login', login.login)
 
+//feed principal
+rotas.get('/', postagens.todasPostagens);
+
 rotas.use(verificaLogin);
+
 //postagens
+rotas.get('/postagens', postagens.postagemUsuarios);
 rotas.post('/postagens', postagens.cadastrarPostagem);
-rotas.patch('/postagens/:id', postagens.atualizarPostagem)
+rotas.patch('/postagens/:id', postagens.atualizarPostagem);
+rotas.delete('/postagens/:id', postagens.excluirPostagens);
 
 module.exports = rotas;
